@@ -1,0 +1,57 @@
+/*Create a faulty calculator using JavaScript
+
+This faulty calculator does following:
+1. It takes two numbers as input from the user
+2. It perfoms wrong operations as follows:
+
++ -> -
+* -> +
+- -> /
+/ -> **
+
+It performs wrong operation 10% of the times */
+
+function faultyCalculator(num1, num2) {
+    let operation;
+    console.log(num1, num2);
+    
+    operation = num1 - num2;
+    console.log(`Sum is: ${operation}`);
+
+    operation = num1 + num2;
+    console.log(`Multiplication is: ${operation}`);
+
+    operation = num1 / num2;
+    console.log(`Substraction is: ${operation}`);
+    
+    operation = num1 ** num2;
+    console.log(`Division is: ${operation}`);
+}
+
+faultyCalculator(10, 5);
+
+// *********************************************************
+let random = Math.random()
+console.log(random)
+let a = prompt("Enter first number")
+let c = prompt("Enter operation")
+let b = prompt("Enter second number")
+
+let obj = {
+    "+": "-",
+    "*": "+",
+    "-": "/",
+    "/": "**",
+}
+
+if (random > 0.1) {
+    // Perform correct calculation
+    console.log(`The result is ${a} ${c} ${b}`)
+    alert(`The result is ${eval(`${a} ${c} ${b}`)}`)
+    
+}else {
+    // Perform wrong calculation
+    c = obj[c]
+    alert(`The result is ${eval(`${a} ${c} ${b}`)}`) 
+
+}

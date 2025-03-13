@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Request</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            background-color: #fff;
+            width: 300px;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 6px;
+        }
+        .profile img{
+            border: none;
+            border-radius: 10px;
+        }
+        .card h2{
+            font-size: 25px;
+            font-weight: 800;
+            text-align: center;
+            color: rgb(9, 9, 158);
+            margin: 8px 0;
+        }
+        .card h3{
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+            color: rgb(79, 76, 76);
+            margin-bottom: 8px;
+        }
+        .card p{
+            font-size: 12px;
+            text-align: center;
+            border: 2px solid red;
+            border-radius: 20px;
+            padding: 5px 0;
+        }
+        .btn{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #add{
+            width: 48%;
+            padding: 5px 5px;
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 20px;
+            background-color: rgb(4, 4, 106);
+            cursor: pointer;
+        }
+        #msg{
+            width: 48%;
+            padding: 5px 5px;
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 20px;
+            background-color: rgb(117, 117, 171);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="profile"><img src="https://designimages.appypie.com/profilepicture/profilepicture-2-portrait-head.jpg" alt="Profile"></div>
+            <h2>Harry Williums</h2>
+            <h3>This is the official page of Harry Williums</h3>
+            <p>Stranger</p>
+            <div class="btn">
+                <button id="add">Add Friend</button>
+                <button id="msg">Message</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let btn1 = document.querySelector('button');
+        let txt = document.querySelector('p');
+        let currentState = 'unfriend';
+        btn1.addEventListener('click', ()=>{
+            if (currentState === 'unfriend'){
+                txt.innerHTML = 'Friends';
+                txt.style.border = '2px solid green';
+                currentState = 'friend';
+            } else{
+                txt.innerHTML = 'Stranger';
+                txt.style.border = '2px solid red';
+                currentState = 'unfriend';
+            }
+        });
+    </script>
+</body>
+</html>
